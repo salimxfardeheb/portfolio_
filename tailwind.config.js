@@ -6,13 +6,48 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      lg: "1290px",
+      md: "900px",
+      sm: "600px",
+    },
+    colors: {
+      redOrange: "#FF302F",
+      nevada: "#676869",
+      white: "#FFFFFF",
+      black: "#000000",
+    },
+    fontFamily: {
+      poppins: ["Poppins"],
+    },
+    fontSize: {
+      // Desktop
+      Header1: ["55px", { fontWeight: "800" }],
+      Header2: ["45px", { fontWeight: "800" }],
+      Header3: ["35px", { fontWeight: "800" }],
+      Header4: ["25px", { fontWeight: "500" }],
+      Header5: ["18px", { fontWeight: "300" }],
+      // Mobile
+      MobileHeader1: ["45px", { fontWeight: "800" }],
+      MobileHeader2: ["35px", { fontWeight: "800" }],
+      MobileHeader3: ["25px", { fontWeight: "800" }],
+      MobileHeader4: ["18px", { fontWeight: "500" }],
+      MobileHeader5: ["16px", { fontWeight: "300" }],
+
+      //text
+      p: ["16px", { fontWeight: "400" }],
+    },
+
+
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        hero: "url('/Herosection.png')",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };
