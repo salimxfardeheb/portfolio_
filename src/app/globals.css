@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.menuItems {
+    @apply absolute w-full bg-white p-4 rounded-md shadow-redOrange shadow-2xl ease-in-out duration-500;
+}
+
+.inputContact {
+    @apply rounded-[20px] bg-black border-2 border-white placeholder:text-white focus:border-redOrange p-5;
+}
+
+.copyRight {
+    @apply text-nevada text-p;
+}
+
+.socialMedia{
+    @apply w-10 h-10 text-nevada object-contain hover:text-redOrange;
+}
+
+.buttonUP {
+    @apply rounded-full bg-redOrange flex p-3 w-fit justify-center items-center cursor-pointer fixed z-40 shadow-md md:bottom-10 bottom-5 ease-in-out duration-500;
+}
