@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import menuItems from "../navbar/menuItems";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
@@ -9,12 +9,12 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Footer = () => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
-  const [comment, setComment] = useState(null);
+  const [message, setMessage] = useState(null);
 
   const values = {
     name: name,
     email: email,
-    comment: comment,
+    message: message,
   };
 
   const sendMail = () => {
@@ -27,8 +27,11 @@ const Footer = () => {
         console.log("error");
       });
   };
-  
-  console.log(values);
+
+  /* useEffect( ()=> {
+    fetch("http://localhost:3001/send").then((res) => )
+  }) */
+
   return (
     <div className="bg-black py-24 flex flex-col md:gap-24 gap-12">
       <div className="mx-[12%] flex flex-col gap-6" id="contact">
@@ -61,14 +64,14 @@ const Footer = () => {
               }}
             />
             <textarea
-              name="comment"
+              name="message"
               id=""
               cols="30"
               rows="10"
               className="inputContact"
               placeholder="Your Message"
               onChange={(e) => {
-                setComment(e.target.value);
+                setMessage(e.target.value);
               }}
             ></textarea>
             <button className="bg-redOrange py-3 hover:opacity-90 duration-150" onClick={sendMail}>

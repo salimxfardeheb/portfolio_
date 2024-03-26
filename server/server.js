@@ -21,11 +21,12 @@ app.post('/send', (req, res) => {
             pass: "jgmn lndo jfgm alyo"
         }
     })
+    console.log({name,email,message})
     const mailOptions = {
         from : email,
         to: "salimfardeheb442@gmail.com",
         subject: `Portfolio: Message de ${name}`,
-        html: `<h1>Message de :${name}</h1>
+        html: `<h3>Message de :${name}</h3>
         <p>email: ${email}</p>
         <br/>
         <p>message: ${message}</p>`
