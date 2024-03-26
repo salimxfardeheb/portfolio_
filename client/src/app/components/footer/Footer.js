@@ -19,7 +19,7 @@ const Footer = () => {
 
   const sendMail = () => {
     axios
-      .post("http://localhost:3000/send-email", values)
+      .post("http://localhost:3001/send", values)
       .then(() => {
         console.log("success!");
       })
@@ -28,7 +28,6 @@ const Footer = () => {
       });
   };
   
-
   console.log(values);
   return (
     <div className="bg-black py-24 flex flex-col md:gap-24 gap-12">
