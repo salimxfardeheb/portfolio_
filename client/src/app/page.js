@@ -1,8 +1,9 @@
-
-'use client'
-import React, {useState, useEffect} from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { NotificationContainer } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 import NavbarDesktop from "./components/navbar/navbarDesktop";
 import NavbarMobile from "./components/navbar/navbarMobile";
@@ -41,14 +42,16 @@ const App = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <>
+    <div>
+    <NotificationContainer />
+    </div>
       <AnchorLink href="/up" className="absolute">
         <div
           className={
-            showButton
-              ? "ButtonUP -right-96 "
-              : "buttonUP md:right-10 right-5 "
+            showButton ? "ButtonUP -right-96 " : "buttonUP md:right-10 right-5 "
           }
         >
           <FaChevronUp className="text-white md:h-10 md:w-10 h-5 w-5" />
@@ -65,7 +68,11 @@ const App = () => {
             title="Professional"
             description={descriptionsAdv[0]}
           />
-          <Card icon="/images/rating-cards/Fast.png" title="Fast" description={descriptionsAdv[1]} />
+          <Card
+            icon="/images/rating-cards/Fast.png"
+            title="Fast"
+            description={descriptionsAdv[1]}
+          />
           <Card
             icon="/images/rating-cards/Communications.png"
             title="Communication"

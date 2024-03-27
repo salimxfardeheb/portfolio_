@@ -5,11 +5,17 @@ import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
 import handleclick from "../portfolioSection/handleclick";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { NotificationManager } from "react-notifications";
 
 const Footer = () => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [message, setMessage] = useState(null);
+  const [messageServer, setMessageServer] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Empêche le rafraîchissement de la page
+  };
 
   const values = {
     name: name,
@@ -20,17 +26,22 @@ const Footer = () => {
   const sendMail = () => {
     axios
       .post("http://localhost:3001/send", values)
-      .then(() => {
+      .then((res) => {
         console.log("success!");
+        NotificationManager.success(res.data, "Succès");
+        setName("");
+        setEmail("");
+        setMessage("");
+        return res.data; // Renvoyer les données pour la prochaine promesse
       })
-      .catch(() => {
+      .then((data) => {
+        setMessageServer(data.message);
+      })
+      .catch((error) => {
         console.log("error");
+        NotificationManager.error(error.response.data, "Erreur");
       });
   };
-
-  /* useEffect( ()=> {
-    fetch("http://localhost:3001/send").then((res) => )
-  }) */
 
   return (
     <div className="bg-black py-24 flex flex-col md:gap-24 gap-12">
@@ -43,7 +54,7 @@ const Footer = () => {
             Work Inquiry
           </p>
         </div>
-        <form method="post">
+        <form method="post" onSubmit={handleSubmit}>
           <div className="input-group flex flex-col gap-6 text-white ">
             <input
               type="text"
@@ -74,7 +85,10 @@ const Footer = () => {
                 setMessage(e.target.value);
               }}
             ></textarea>
-            <button className="bg-redOrange py-3 hover:opacity-90 duration-150" onClick={sendMail}>
+            <button
+              className="bg-redOrange py-3 hover:opacity-90 duration-150"
+              onClick={sendMail}
+            >
               Send Your Message
             </button>
           </div>
