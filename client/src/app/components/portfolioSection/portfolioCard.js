@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import { GrFormNextLink } from "react-icons/gr";
 import { motion as m } from "framer-motion";
 import handleclick from "./handleclick";
@@ -28,14 +30,28 @@ const ItemsPortfolio = [
 ];
 
 const portfolioCard = () => {
+  const getPortfolio = () => {
+    axios
+      .get("http://localhost:3001/portfolio")
+      .then((response) => {
+        console.log("succes !");
+        const ItemsPortfolio1 = response.data;
+        return ItemsPortfolio1;
+    });
+  };
 
+  console.log(getPortfolio())
 
   return (
     <div className="flex flex-col gap-24 snap-mandatory snap-y scroll-p-12">
       {ItemsPortfolio.map((data) => (
         <div
           key={data.id}
-          className={data.id % 2 === 0 ? `flex flex-col md:flex-row-reverse items-center justify-between gap-6 snap-always snap-center`: "flex flex-col md:flex-row items-center justify-between gap-6 snap-always snap-center" }
+          className={
+            data.id % 2 === 0
+              ? `flex flex-col md:flex-row-reverse items-center justify-between gap-6 snap-always snap-center`
+              : "flex flex-col md:flex-row items-center justify-between gap-6 snap-always snap-center"
+          }
         >
           {/* image */}
           <div>
