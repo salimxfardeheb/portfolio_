@@ -57,6 +57,7 @@ const App = () => {
           <FaChevronUp className="text-white md:h-10 md:w-10 h-5 w-5" />
         </div>
       </AnchorLink>
+      {/* nav bar and hero section */}
       <div className="relative md:mb-[25%] mb-[200%] sm:mb-[100%] lg:mb-[12%]">
         <NavbarDesktop />
         <NavbarMobile />

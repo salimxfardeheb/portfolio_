@@ -5,29 +5,6 @@ import { GrFormNextLink } from "react-icons/gr";
 import { motion as m } from "framer-motion";
 import handleclick from "./handleclick";
 
-const ItemsPortfolio = [
-  {
-    id: 1,
-    title: "Easy Academia",
-    image: "/images/EasyAcademia.png",
-    description:
-      "Experience an educational revolution with our all-in-one app. Simplify school management, provide full visibility, and transform the educational process. From transparent financial statistics to online bookings for students, our platform rethinks the way we think about teaching and school management. Explore an innovative educational experience today.",
-  },
-  {
-    id: 2,
-    title: "FlexFret",
-    image: "/images/FlexFret.png",
-    description:
-      "Our website is distinguished by a sleek and modern design, offering a captivating visual experience. Intuitive interfaces guide users through smooth navigation, while dynamic graphical elements highlight the key benefits of our platform. The responsive design guarantees perfect adaptability on all devices, offering a neat aesthetic and flawless functionality, thus underlining our commitment to innovation and friendliness.",
-  },
-  {
-    id: 3,
-    title: "Tenue Tendance",
-    image: "/images/TenueTendance.png",
-    description:
-      "Discover the elegance redefined with our latest design project! Our e-commerce website offers a seamless shopping experience, showcasing classic menswear. A sleek interface, captivating visuals, and a streamlined ordering process await you. Explore style with ease.",
-  },
-];
 
 const portfolioCard = () => {
   const getPortfolio = () => {
@@ -35,12 +12,11 @@ const portfolioCard = () => {
       .get("http://localhost:3001/portfolio")
       .then((response) => {
         console.log("succes !");
-        const ItemsPortfolio1 = response.data;
-        return ItemsPortfolio1;
+        return response.data;
     });
   };
 
-  console.log(getPortfolio())
+const ItemsPortfolio = getPortfolio();
 
   return (
     <div className="flex flex-col gap-24 snap-mandatory snap-y scroll-p-12">
