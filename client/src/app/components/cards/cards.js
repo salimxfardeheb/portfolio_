@@ -1,7 +1,4 @@
 import React from "react";
-import { string } from "prop-types";
-
-
 
 const Card = ({ icon, title, description }) => {
   return (
@@ -22,11 +19,5 @@ const Card = ({ icon, title, description }) => {
     </div>
   );
 };
-
-Card.defaultProps = {
-    icon: string,
-    title: string,
-    description: string,
-  };
 
 export default Card;
