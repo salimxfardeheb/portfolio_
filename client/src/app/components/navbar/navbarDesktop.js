@@ -30,7 +30,7 @@ const NavbarDesktop = () => {
         </div>
         {/* get in touch button*/}
         <AnchorLink href="/contact">
-          <button className="lg:px-5 px-3 py-2 lg:py-2 bg-redOrange text-white text-p hover:bg-opacity-0 hover:border-2" onClick={()=> {console.log()}}>
+          <button className="lg:px-5 px-3 py-2 lg:py-2 bg-redOrange text-white text-p hover:bg-opacity-0 hover:border-2" onClick={()=> {}}>
             Get in Touch
           </button>
         </AnchorLink>

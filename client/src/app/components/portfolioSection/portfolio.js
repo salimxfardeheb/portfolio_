@@ -1,7 +1,6 @@
 import React from "react";
-import PortfolioCard from "./portfolioCard";
 
-const Portfolio = () => {
+const Myworks = () => {
   return (
     <div className="my-[100px] mx-[12%] flex flex-col justify-center items-center gap-12" id="portfolio">
       <div className="gap-5 flex flex-col md:w-1/2 justify-center items-center">
@@ -31,4 +30,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Myworks;

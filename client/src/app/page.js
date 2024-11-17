@@ -1,9 +1,9 @@
-"use client";
+'use client'
 import React, { useState, useEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { NotificationContainer } from 'react-notifications';
-import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 
 import NavbarDesktop from "./components/navbar/navbarDesktop";
 import NavbarMobile from "./components/navbar/navbarMobile";
@@ -13,20 +13,10 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import Portfolio from "./components/portfolioSection/portfolio";
 import Footer from "./components/footer/Footer";
 
-const descriptionsAdv = [
-  "A seasoned professional in my field, I bring expertise and dedication to ensure top-tier work.",
-  "Swift and efficient, I prioritize timely project delivery without compromising quality.",
-  "Adept at clear and open communication, I foster collaboration for successful project outcomes.",
-];
+import { descriptionServices, descriptionsAdv } from "./texts";
 
-const descriptionServices = [
-  "I design captivating interfaces for desktop and mobile platforms, prioritizing seamless user experiences across devices.",
-  "I create prototypes using Figma and Adobe XD, bringing designs to life with interactive and user-friendly experiences.",
-  "I employ a design system to streamline and enhance the consistency of my creations, ensuring a cohesive and polished aesthetic in my designs.",
-];
-
-const App = () => {
-  const [showButton, setShowButton] = useState(true);
+const Index = () => {
+    const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,11 +33,10 @@ const App = () => {
     };
   }, []);
 
-  return (
-    <>
-    <div>
-    <NotificationContainer />
-    </div>
+  return <>
+  <div>
+        <NotificationContainer />
+      </div>
       <AnchorLink href="/up" className="absolute">
         <div
           className={
@@ -106,7 +95,7 @@ const App = () => {
       </div>
       {/* footer */}
       <Footer />
-    </>
-  );
+  </>;
 };
-export default App;
+
+export default Index;
