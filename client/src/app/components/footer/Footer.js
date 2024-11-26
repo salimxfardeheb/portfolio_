@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import menuItems from "../navbar/menuItems";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
-import handleclick from "../portfolioSection/handleclick";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { NotificationManager } from "react-notifications";
+import Link from "next/link";
 
 const Footer = () => {
   const [name, setName] = useState(null);
@@ -14,7 +13,7 @@ const Footer = () => {
   const [messageServer, setMessageServer] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le rafraîchissement de la page
+    e.preventDefault();
   };
 
   const values = {
@@ -25,17 +24,18 @@ const Footer = () => {
 
   const sendMail = () => {
     axios
-      .post("http://localhost:3001/send", values)
+      .post("http://localhost:8000/send", values)
       .then((res) => {
         console.log("success!");
         NotificationManager.success(res.data, "Succès");
         setName("");
         setEmail("");
         setMessage("");
-        return res.data; // Renvoyer les données pour la prochaine promesse
+        return res.data;
       })
       .then((data) => {
         setMessageServer(data.message);
+        console.log(messageServer)
       })
       .catch((error) => {
         console.log("error");
@@ -99,7 +99,7 @@ const Footer = () => {
           <ul className=" text-white flex flex-col md:flex-row md:justify-around items-center text-Header5 border-y-2 border-nevada md:py-12 gap-6 py-5 mx-[25%] md:mx-auto">
             {menuItems.map((data) => (
               <li key={data.id} className=" hover:text-redOrange">
-                <AnchorLink href={data.link}>{data.name}</AnchorLink>
+                <Link href={data.link}>{data.name}</Link>
               </li>
             ))}
           </ul>
@@ -116,16 +116,16 @@ const Footer = () => {
             <p className="copyRight">© Copyright by Salim Fardeheb.</p>
           </div>
           <div className="flex justify-between md:w-[30%] gap-3">
-            <a href="" onClick={handleclick}>
+            <a href="" onClick={()=> {alert("soon")}}>
               <FaFacebookSquare className="socialMedia" />
             </a>
-            <a href="" onClick={handleclick}>
+            <a href="" onClick={()=> {alert("soon")}}>
               <FaLinkedin className="socialMedia" />
             </a>
-            <a href="" onClick={handleclick}>
+            <a href="" onClick={()=> {alert("soon")}}>
               <FaSquareXTwitter className="socialMedia" />
             </a>
-            <a href="" onClick={handleclick}>
+            <a href="" onClick={()=> {alert("soon")}}>
               <FaSquareInstagram className="socialMedia" />
             </a>
           </div>

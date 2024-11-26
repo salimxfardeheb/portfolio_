@@ -1,6 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -16,6 +17,7 @@ const HeroSection = () => {
           <TypeAnimation
             sequence={[
               "A designer specializing in graphics for both web and mobile platforms.",
+              "Fullstack web developper with Fast and modern tools. "
             ]}
             wrapper="span"
             speed={25}
@@ -25,12 +27,11 @@ const HeroSection = () => {
       </div>
       {/* CTA Button (see my works) */}
       <div>
-        
-        <AnchorLink href="/portfolio">
+        <Link href="/portfolio">
           <button className="px-9 py-5 text-white text-MobileHeader4  border-2 hover:bg-redOrange hover:scale-105 duration-200">
             See My Works
           </button>
-        </AnchorLink>
+        </Link>
       </div>
     </div>
   );
