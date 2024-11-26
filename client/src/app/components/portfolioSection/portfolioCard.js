@@ -13,15 +13,11 @@ const PortfolioCard = () => {
         setItemsPortfolio(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des données :", error);
-      } finally {
-        setLoading(false);
       }
     };
 
     getPortfolio();
   }, []);
-
-
 
   return (
     <div className="flex flex-col gap-24 snap-mandatory snap-y scroll-p-12 bg-black md:py-56 py-28 items-center">
