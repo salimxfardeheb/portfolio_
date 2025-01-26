@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const AboutMe = () => {
+const AboutMe = ({text = 'text-black'}) => {
   return (
     <div className="mb-[100px] pt-[100px]" id="about">
       <div className="mx-[12%] flex flex-col md:flex-row justify-between items-center gap-6">
@@ -18,7 +18,7 @@ const AboutMe = () => {
           <p className=" text-redOrange text-MobileHeader5 md:text-Header5">
             About
           </p>
-          <p className="text-MobileHeader2 md:text-Header2">About Me</p>
+          <p className={`text-MobileHeader2 md:text-Header2 ${text}`}>About Me</p>
           <p className=" text-p text-nevada">
             As a master’s student in computer science, my passion for graphic
             design led me to follow various online courses, including web
