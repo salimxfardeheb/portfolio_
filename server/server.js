@@ -13,7 +13,7 @@ const app = express();
 dotenv.config({ path: "./.env" });
 
 app.use(cors({
-  origin: 'https://main--salimsportfolio.netlify.app',
+  origin: 'https://salimsportfolio.netlify.app',
   credentials: true
 }));
 app.use(express.json());
