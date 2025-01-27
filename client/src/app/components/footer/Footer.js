@@ -24,7 +24,7 @@ const Footer = () => {
 
   const sendMail = () => {
     axios
-      .post("http://localhost:8000/send", values)
+      .post("https://portfolio-5wx5.onrender.com/send", values)
       .then((res) => {
         console.log("success!");
         NotificationManager.success(res.data, "Succès");

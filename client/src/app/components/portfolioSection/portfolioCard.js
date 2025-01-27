@@ -8,7 +8,7 @@ const PortfolioCard = () => {
   useEffect(() => {
     const getPortfolio = async () => {
       try {
-        const response = await axios.get("https://portfolio-5wx5.onrender.com/portfolio");
+        const response = await axios.get("https://portfolio-5wx5.onrender.com/portfolio", {withCredentials: true,});
         console.log("Succès !");
         setItemsPortfolio(response.data);
       } catch (error) {

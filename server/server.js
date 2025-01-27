@@ -16,6 +16,15 @@ app.use(cors({
   origin: 'https://salimsportfolio.netlify.app',
   credentials: true
 }));
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://salimsportfolio.netlify.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/")));
 app.use(body_parser.urlencoded({ extended: true }));
