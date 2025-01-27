@@ -116,16 +116,16 @@ const Footer = () => {
             <p className="copyRight">© Copyright by Salim Fardeheb.</p>
           </div>
           <div className="flex justify-between md:w-[30%] gap-3">
-            <a href="" onClick={()=> {alert("soon")}}>
+            <a href="https://www.facebook.com/salimxfardeheb13/">
               <FaFacebookSquare className="socialMedia" />
             </a>
-            <a href="" onClick={()=> {alert("soon")}}>
+            <a href="https://www.linkedin.com/in/salim-fardeheb-ba6060256/">
               <FaLinkedin className="socialMedia" />
             </a>
-            <a href="" onClick={()=> {alert("soon")}}>
+            <a href="https://x.com/salimxfardeheb"  >
               <FaSquareXTwitter className="socialMedia" />
             </a>
-            <a href="" onClick={()=> {alert("soon")}}>
+            <a href="https://www.instagram.com/salimsdev?igsh=MThncHI0dGFjeWNpYg%3D%3D&utm_source=qr&fbclid=IwY2xjawIEbLNleHRuA2FlbQIxMAABHbU-Md6ZATqcdp1NTZuUxqodAL8XKsm78VAbIJ68euLlkDU2jimq_AhiRA_aem_34NbxfoVr1HFO1wdo_Tjlg">
               <FaSquareInstagram className="socialMedia" />
             </a>
           </div>
