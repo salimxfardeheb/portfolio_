@@ -8,7 +8,7 @@ const PortfolioCard = () => {
   useEffect(() => {
     const getPortfolio = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/portfolio");
+        const response = await axios.get("https://main--salimsportfolio.netlify.app/portfolio");
         console.log("Succès !");
         setItemsPortfolio(response.data);
       } catch (error) {

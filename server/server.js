@@ -6,12 +6,18 @@ const { readDataFile } = require("./functions");
 const body_parser = require("body-parser");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const dotenv = require("dotenv");
 
 const app = express();
 
-app.use(cors());
+dotenv.config({ path: "./.env" });
+
+app.use(cors({
+  origin: 'https://main--salimsportfolio.netlify.app',
+  credentials: true
+}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../client/")));
+app.use(express.static(path.join(__dirname, "./client/")));
 app.use(body_parser.urlencoded({ extended: true }));
 
 app.post("/send", (req, res) => {
@@ -19,8 +25,8 @@ app.post("/send", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "salimfardeheb442@gmail.com",
-      pass: "jgmn lndo jfgm alyo",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
 
@@ -58,12 +64,12 @@ app.get("/portfolio", (req, res) => {
       res.send(JSON.parse(content))
     })
     .catch((error) => {
-      res.status(500).json("erreur : ", error)
+      res.status(500).json({error : error.message})
       console.error(error);
     });
 });
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
 });
