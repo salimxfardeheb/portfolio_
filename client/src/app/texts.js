@@ -10,4 +10,10 @@ const descriptionServices = [
   "I employ a design system to streamline and enhance the consistency of my creations, ensuring a cohesive and polished aesthetic in my designs.",
 ];
 
-module.exports = { descriptionServices, descriptionsAdv };
+const descriptionFullstack = [
+  "I transform your model into a modern and responsive website that can be used on multiple devices. ",
+  "I develop a web server that can interact with inerface and give several dynamic page and interactions in real time.",
+  "I create an optimized and well-structured database with uml diagrams."
+]
+
+module.exports = { descriptionServices, descriptionsAdv, descriptionFullstack};
