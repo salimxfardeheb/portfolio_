@@ -14,9 +14,9 @@ const page = () => {
       <NavbarDesktop />
       <NavbarMobile />
       <div className="flex flex-col justify-center items-center py-48 gap-6">
-        <p className="text-redOrange text-Header5">services</p>
+        <p className="text-redOrange md:text-Header5 text-MobileHeader5">services</p>
         <div className="flex flex-col justify-center items-center">
-        <p className="text-white text-Header2"><span className="text-redOrange text-Header5 mx-4">as</span>WEB DESIGNER</p>
+        <p className="services_text"><span>as</span>WEB DESIGNER</p>
         {/* cards of Services */}
         <div
           className="flex flex-col md:flex-row mx-[12%] gap-12 my-20"
@@ -42,7 +42,7 @@ const page = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center">
-        <p className="text-white text-Header2"><span className="text-redOrange text-Header5 mx-4">as</span>FULLSTACK DEVLOPPER</p>
+        <p className="services_text"><span>as</span>FULLSTACK DEVLOPPER</p>
         {/* cards of Services */}
         <div
           className="flex flex-col md:flex-row mx-[12%] gap-12 my-20"

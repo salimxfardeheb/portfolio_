@@ -21,3 +21,11 @@
 .buttonUP {
     @apply rounded-full bg-redOrange flex p-3 w-fit justify-center items-center cursor-pointer fixed z-40 shadow-md md:bottom-10 bottom-5 ease-in-out duration-500;
 }
+
+.services_text{
+    @apply text-white text-Header2;
+}
+
+.services_text span{
+    @apply text-redOrange md:text-Header5 text-MobileHeader5 mx-4;
+}
