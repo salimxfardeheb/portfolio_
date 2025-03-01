@@ -4,11 +4,14 @@ import { motion as m } from "framer-motion";
 
 const PortfolioCard = () => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:7000"
+
+  console.log(`${apiUrl}/portfolio`)
 
   useEffect(() => {
     const getPortfolio = async () => {
       try {
-        const response = await axios.get("https://portfolio-5wx5.onrender.com/portfolio", {withCredentials: true,});
+        const response = await axios.get(`${apiUrl}/portfolio`, {withCredentials: true,});
         console.log("Succès !");
         setItemsPortfolio(response.data);
       } catch (error) {

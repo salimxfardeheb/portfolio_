@@ -12,22 +12,28 @@ const app = express();
 
 dotenv.config({ path: "./.env" });
 
-app.use(cors({
-  origin: 'https://salimsportfolio.netlify.app',
-  credentials: true
-}));
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:3000"];
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://salimsportfolio.netlify.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Origine non autorisée par CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/")));
 app.use(body_parser.urlencoded({ extended: true }));
+
+app.post("/", (req, res) => {
+  res.json({ message: "hello" });
+});
 
 app.post("/send", (req, res) => {
   const { name, email, message } = req.body;
@@ -70,15 +76,15 @@ app.post("/send", (req, res) => {
 app.get("/portfolio", (req, res) => {
   readDataFile()
     .then((content) => {
-      res.send(JSON.parse(content))
+      res.send(JSON.parse(content));
     })
     .catch((error) => {
-      res.status(500).json({error : error.message})
+      res.status(500).json({ error: error.message });
       console.error(error);
     });
 });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
   console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
 });
