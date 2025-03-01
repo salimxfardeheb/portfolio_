@@ -1,45 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import menuItems from "../navbar/menuItems";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
-import { NotificationManager } from "react-notifications";
 import Link from "next/link";
 
 const Footer = () => {
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [message, setMessage] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [messageServer, setMessageServer] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    // Vérifier si l'opération a été réussie après rechargement
+    if (localStorage.getItem("operationSuccess") === "true") {
+      setSuccess(true);
+      localStorage.removeItem("operationSuccess"); // Nettoyer après affichage
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
-  const values = {
-    name: name,
-    email: email,
-    message: message,
-  };
+  const values = { name, email, message };
 
   const sendMail = () => {
     axios
-      .post("https://portfolio-5wx5.onrender.com/send", values)
+      .post("http://localhost:8000/send", values)
       .then((res) => {
-        console.log("success!");
-        NotificationManager.success(res.data, "Succès");
+        console.log("Success!");
+
         setName("");
         setEmail("");
         setMessage("");
-        return res.data;
-      })
-      .then((data) => {
-        setMessageServer(data.message);
-        console.log(messageServer)
+
+        localStorage.setItem("operationSuccess", "true");
+        window.location.reload(); // Recharger la page pour afficher le message
       })
       .catch((error) => {
-        console.log("error");
-        NotificationManager.error(error.response.data, "Erreur");
+        console.log("Error:", error);
       });
   };
 
@@ -54,38 +55,42 @@ const Footer = () => {
             Work Inquiry
           </p>
         </div>
+
+        {success && (
+          <p className="text-green-500 font-semibold">
+            ✅ Votre message a été envoyé avec succès !
+          </p>
+        )}
+
         <form method="post" onSubmit={handleSubmit}>
-          <div className="input-group flex flex-col gap-6 text-white ">
+          <div className="input-group flex flex-col gap-6 text-white">
             <input
               type="text"
               name="name"
               placeholder="Your Name"
               className="inputContact"
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             <input
-              type="Email"
+              type="email"
               name="email"
               placeholder="Your Email"
               className="inputContact"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <textarea
               name="message"
-              id=""
               cols="30"
               rows="10"
               className="inputContact"
               placeholder="Your Message"
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <button
+              type="button"
               className="bg-redOrange py-3 hover:opacity-90 duration-150"
               onClick={sendMail}
             >
@@ -94,42 +99,39 @@ const Footer = () => {
           </div>
         </form>
       </div>
+
       <div className="mx-[17%]">
-        <div>
-          <ul className=" text-white flex flex-col md:flex-row md:justify-around items-center text-Header5 border-y-2 border-nevada md:py-12 gap-6 py-5 mx-[25%] md:mx-auto">
-            {menuItems.map((data) => (
-              <li key={data.id} className=" hover:text-redOrange">
-                <Link href={data.link}>{data.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="text-white flex flex-col md:flex-row md:justify-around items-center text-Header5 border-y-2 border-nevada md:py-12 gap-6 py-5 mx-[25%] md:mx-auto">
+          {menuItems.map((data) => (
+            <li key={data.id} className="hover:text-redOrange">
+              <Link href={data.link}>{data.name}</Link>
+            </li>
+          ))}
+        </ul>
+
         <div className="flex justify-between items-center md:mt-[100px] mt-12">
-          <div>
-            <img
-              src="/images/logo-SF.png"
-              alt=""
-              className="md:w-[120px] w-[64.15px] object-contain"
-            />
-          </div>
-          <div className="hidden md:block">
-            <p className="copyRight">© Copyright by Salim Fardeheb.</p>
-          </div>
-          <div className="flex justify-between md:w-[30%] gap-3">
+          <img
+            src="/images/logo-SF.png"
+            alt="Logo"
+            className="md:w-[120px] w-[64.15px] object-contain"
+          />
+          <p className="hidden md:block copyRight">© Copyright by Salim Fardeheb.</p>
+          <div className="flex gap-3">
             <a href="https://www.facebook.com/salimxfardeheb13/">
               <FaFacebookSquare className="socialMedia" />
             </a>
             <a href="https://www.linkedin.com/in/salim-fardeheb-ba6060256/">
               <FaLinkedin className="socialMedia" />
             </a>
-            <a href="https://x.com/salimxfardeheb"  >
+            <a href="https://x.com/salimxfardeheb">
               <FaSquareXTwitter className="socialMedia" />
             </a>
-            <a href="https://www.instagram.com/salimsdev?igsh=MThncHI0dGFjeWNpYg%3D%3D&utm_source=qr&fbclid=IwY2xjawIEbLNleHRuA2FlbQIxMAABHbU-Md6ZATqcdp1NTZuUxqodAL8XKsm78VAbIJ68euLlkDU2jimq_AhiRA_aem_34NbxfoVr1HFO1wdo_Tjlg">
+            <a href="https://www.instagram.com/salimsdev">
               <FaSquareInstagram className="socialMedia" />
             </a>
           </div>
         </div>
+
         <div className="pt-10 md:hidden w-full flex justify-center">
           <p className="copyRight">© Copyright by Salim Fardeheb.</p>
         </div>
@@ -137,4 +139,5 @@ const Footer = () => {
     </div>
   );
 };
+
 export default Footer;
