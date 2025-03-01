@@ -6,7 +6,6 @@ const PortfolioCard = () => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
   const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:7000"
 
-  console.log(`${apiUrl}/portfolio`)
 
   useEffect(() => {
     const getPortfolio = async () => {

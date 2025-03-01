@@ -25,10 +25,11 @@ const Footer = () => {
   };
 
   const values = { name, email, message };
+  const api_url = process.env.REACT_APP_API_URL || "http://localhost:7000"
 
   const sendMail = () => {
     axios
-      .post("http://localhost:8000/send", values)
+      .post(`${api_url}/send`, values)
       .then((res) => {
         console.log("Success!");
 
