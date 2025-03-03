@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      lg: "1290px",
+      lg: "1441px",
       md: "900px",
       sm: "600px",
     },
@@ -31,6 +31,7 @@ module.exports = {
       MobileHeader1: ["45px", { fontWeight: "800" }],
       MobileHeader2: ["35px", { fontWeight: "800" }],
       MobileHeader3: ["25px", { fontWeight: "800" }],
+      MobileHeader32: ["20px", { fontWeight: "800" }],
       MobileHeader4: ["18px", { fontWeight: "500" }],
       MobileHeader5: ["16px", { fontWeight: "300" }],
 
@@ -50,4 +51,5 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
   ],
+  
 };
