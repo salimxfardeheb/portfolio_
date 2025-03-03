@@ -98,6 +98,37 @@ const Index = () => {
           description={descriptionServices[1]}
         />
       </div>
+      {/* my ToolKit*/}
+      <div className="flex flex-col justify-center items-center mx-[12%] gap-10 my-14 md:my-28">
+      <div className="gap-5 flex flex-col md:w-1/2 justify-center items-center">
+        <p className=" text-redOrange text-MobileHeader5 md:text-Header5">
+          Workspace
+        </p>
+        <p className="text-MobileHeader2 md:text-Header2">My ToolKit</p>
+      </div>
+      <div className="md:flex justify-between w-full hidden">
+        <img src="./images/toolkit/canva.png"/>
+        <img src="./images/toolkit/tailwindcss.png"/>
+        <img src="./images/toolkit/figma.png"/>
+        <img src="./images/toolkit/nodejs.png"/>
+        <img src="./images/toolkit/xd.png"/>
+        <img src="./images/toolkit/git.png"/>
+        <img src="./images/toolkit/react.png"/>
+      </div>
+      <div className="flex flex-col gap-7 md:hidden">
+        <div className="flex gap-4 justify-center items-center">
+        <img src="./images/toolkit/canva.png" className="max-h-14"/>
+        <img src="./images/toolkit/figma.png" className="max-h-14"/>
+        <img src="./images/toolkit/xd.png" className="max-h-14"/>
+        </div>
+        <div className="flex gap-4 justify-center items-center">
+        <img src="./images/toolkit/tailwindcss.png" className="max-h-14"/>
+        <img src="./images/toolkit/nodejs.png" className="max-h-14"/>
+        <img src="./images/toolkit/git.png" className="max-h-14"/>
+        <img src="./images/toolkit/react.png" className="max-h-14"/>
+        </div>
+      </div>
+      </div>
       {/* footer */}
       <Footer />
     </>
