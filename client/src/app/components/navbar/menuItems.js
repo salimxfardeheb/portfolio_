@@ -13,6 +13,18 @@ const menuItems = [
     id: 3,
     name: "Portfolio",
     link: "/portfolio",
+    items: [
+      {
+        id: 1,
+        name: "Graphic design",
+        link: "/portfolio/graphicdesign",
+      },
+      {
+        id: 2,
+        name: "Full-Stack developer",
+        link: "/portfolio/fullstack",
+      },
+    ],
   },
   {
     id: 4,
