@@ -1,14 +1,13 @@
 import React from "react";
 
-
-const AboutMe = ({text = 'text-black'}) => {
+const AboutMe = ({ text = "text-black" }) => {
   return (
     <div className="mb-[100px] pt-[100px]" id="about">
       <div className="mx-[12%] flex flex-col md:flex-row justify-between items-center gap-6">
         {/* image About Me */}
         <div>
           <img
-            src="/images/AboutMe.png"
+            src="/images/profile_picture.png"
             alt="About Me Cover"
             className="md:w-[447px] w-[313px] object-contain"
           />
@@ -18,22 +17,31 @@ const AboutMe = ({text = 'text-black'}) => {
           <p className=" text-redOrange text-MobileHeader5 md:text-Header5">
             About
           </p>
-          <p className={`text-MobileHeader2 md:text-Header2 ${text}`}>About Me</p>
-          <p className=" text-p text-nevada">
-            As a master’s student in computer science, my passion for graphic
-            design led me to follow various online courses, including web
-            design, responsive landing pages and mobile applications. During my
-            internships, I had the opportunity to put my skills into practice by
-            designing the landing page and application for FlexFret, as well as
-            for several other projects.
+          <p className={`text-MobileHeader2 md:text-Header2 ${text}`}>
+            About Me
+          </p>
+          <p className="aboutme_text">
+            I'm 24 years old, computer science graduate with a Master's degree
+            and over
+            <span>3 years of experiance</span> of in
+            <span> UI/UX design</span> and <span>Full-stack development</span>.
             <br />
             <br />
-            With a solid background in UX/UI design, I am committed to creating
-            exceptional user experiences. My passion for design is reflected in
-            the design of coherent graphic systems, guaranteeing visual
-            aesthetics and optimal functionality. My expertise extends to the
-            creation of design systems, ensuring a smooth and harmonious user
-            experience through various projects.
+            My passion for graphic design drives me to create stunning, modern,
+            and responsive models for websites and mobile applications,
+            utilizing <span>UI/UX design</span> principles and{" "}
+            <span>design system</span> to ensure seamless and user-friendly
+            experiences. As a <span>Full-Stack developer</span>, I specialize in
+            turning into fully functional, modern, and responsive
+            websites—whether static or dynamic. My approach shaped by experience
+            focuses on <span>Code optimization</span> and efficient delivery to
+            ensure <span>high-quality result in a timely manner</span>.
+            <br />
+            <br />
+            Turn your vision into an exceptional digital experience: modern,
+            responsive, and tailor-made websites where every detail is crafted
+            to combine performance, aesthetics, and speed. Your project, in the
+            right hands, becomes a reality that leaves a lasting impression.
           </p>
         </div>
       </div>

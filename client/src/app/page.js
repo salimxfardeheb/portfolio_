@@ -47,12 +47,12 @@ const Index = () => {
         </div>
       </AnchorLink>
       {/* nav bar and hero section */}
-      <div className="relative md:mb-[25%] mb-[200%] sm:mb-[100%] lg:mb-[12%]">
+      <div className="relative md:mb-[25%] lg:mb-[12%]">
         <NavbarDesktop />
         <NavbarMobile />
         <HeroSection />
         {/* Cards of my experiance */}
-        <div className="flex flex-col md:flex-row mx-[12%] gap-12 md:absolute top-[90%]">
+        <div className="flex flex-col md:flex-row mx-[12%] gap-12 md:absolute top-[90%] my-20">
           <Card
             icon="/images/rating-cards/Professional.png"
             title="Professional"

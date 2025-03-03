@@ -37,3 +37,11 @@
 .hero_container img{
     @apply md:min-w-28 min-w-5;
 }
+
+.aboutme_text{
+    @apply text-p text-nevada;
+}
+
+.aboutme_text span{
+    @apply text-redOrange font-bold;
+}
