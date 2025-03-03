@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -13,10 +13,14 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import Portfolio from "./components/portfolioSection/portfolio";
 import Footer from "./components/footer/Footer";
 
-import { descriptionServices, descriptionsAdv } from "./texts";
+import {
+  descriptionFullstack,
+  descriptionServices,
+  descriptionsAdv,
+} from "./texts";
 
 const Index = () => {
-    const [showButton, setShowButton] = useState(true);
+  const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,8 +37,9 @@ const Index = () => {
     };
   }, []);
 
-  return <>
-  <div>
+  return (
+    <>
+      <div>
         <NotificationContainer />
       </div>
       <AnchorLink href="/up" className="absolute">
@@ -83,19 +88,20 @@ const Index = () => {
           description={descriptionServices[0]}
         />
         <Card
-          icon="/images/Services/designSystem.png"
-          title="Design System"
-          description={descriptionServices[1]}
+          icon="/images/Services/webInterface.png"
+          title="Creating the website interface"
+          description={descriptionFullstack[0]}
         />
         <Card
-          icon="/images/Services/Figma.png"
-          title="Figma & adobe XD Prototype"
-          description={descriptionServices[2]}
+          icon="/images/Services/ServerWeb.png"
+          title="Server web"
+          description={descriptionServices[1]}
         />
       </div>
       {/* footer */}
       <Footer />
-  </>;
+    </>
+  );
 };
 
 export default Index;
