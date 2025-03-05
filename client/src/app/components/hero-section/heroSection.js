@@ -6,7 +6,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     // background image
-    <div className="bg-hero md:h-screen bg-cover bg-center flex flex-col gap-12 justify-center items-center">
+    <div className="bg-hero md:h-screen bg-cover bg-center flex flex-col justify-center items-center">
       {/* short description */}
       <div className="flex flex-col items-center text-white gap-10 lg:gap-4 text-center my-[30%] md:my-[10%] md:space-y-12">
 

@@ -57,7 +57,7 @@ const Index = () => {
         <NavbarMobile />
         <HeroSection />
         {/* Cards of my experiance */}
-        <div className="flex flex-col md:flex-row mx-[12%] gap-12 md:absolute top-[90%] my-20">
+        <div className="flex flex-col md:flex-row mx-[12%] gap-12 md:absolute top-[90%] my-20 md:my-4 lg:my-0">
           <Card
             icon="/images/rating-cards/Professional.png"
             title="Professional"
