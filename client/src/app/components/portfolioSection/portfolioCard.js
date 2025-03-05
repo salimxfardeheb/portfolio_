@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion as m } from "framer-motion";
 
-const portfolioCard = ({ Job }) => {
+const portfolioCard = ({ Job , type}) => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
   const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:7000";
 
@@ -30,7 +30,7 @@ const portfolioCard = ({ Job }) => {
         <p className="text-white text-MobileHeader2 md:text-Header2">{Job}</p>
       </div>
       <div className="flex flex-wrap justify-around gap-y-20 w-full">
-        {itemsPortfolio.map((data) => ( data.type_dev ?
+        {itemsPortfolio.map((data) => ( data.type_dev && Job == "Full-Stack Developer" || data.type_design && Job == "UI & UX Designer"?
           <div key={data.id} className="flex flex-col gap-4 md:gap-10">
             <m.img src={data.image} alt={data.title} className="min-w-xl" />
             <p className="text-white text-Header4">{data.title}</p>
