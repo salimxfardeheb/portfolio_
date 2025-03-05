@@ -5,7 +5,11 @@
         "type_design": true,
         "type_dev": true,
         "image": "/images/FlexFret.png",
-        "description": "Experience an educational revolution with our all-in-one app. Simplify school management, provide full visibility, and transform the educational process. From transparent financial statistics to online bookings for students, our platform rethinks the way we think about teaching and school management. Explore an innovative educational experience today."
+        "description": [
+            "I designed the FlexFret company website in collaboration with a design team, using Figma as our primary tool. The project involved creating a user-centered interface, ensuring responsiveness across multiple devices, and implementing a cohesive design system, including a carefully curated color palette and typography to enhance usability and visual appeal.",
+            "I collaborated with Flexfret's development team to transform UI/UX designs into a fully responsive website using HTML, CSS, Tailwind CSS, and Node.js. My role involved converting design mockups into clean, efficient code while ensuring cross-browser compatibility and mobile responsiveness. By leveraging Tailwind CSS for streamlined styling and Node.js for workflow automation, I contributed to a visually appealing and user-friendly website that effectively showcased Flexfret's services. This project highlights my expertise in front-end development, teamwork, and modern web technologies."
+        ],
+        "link": "https://www.flexfret.com/"
     },
     {
         "id": 2,
@@ -13,7 +17,12 @@
         "type_design": true,
         "type_dev": true,
         "image": "/images/My_Portfolio_website.png",
-        "description": "Our website is distinguished by a sleek and modern design, offering a captivating visual experience. Intuitive interfaces guide users through smooth navigation, while dynamic graphical elements highlight the key benefits of our platform. The responsive design guarantees perfect adaptability on all devices, offering a neat aesthetic and flawless functionality, thus underlining our commitment to innovation and friendliness."
+        "description": [
+            "I crafted my personal portfolio website with a focus on UI/UX design principles, utilizing Figma as my primary design tool. The website is fully responsive, ensuring seamless functionality across multiple devices. I also implemented a cohesive design system, including a carefully curated color palette and typography, to maintain consistency and enhance user experience. Feel free to explore the website by visiting the link below.",
+            "I developed my personal portfolio website using modern web technologies, including React (Next.js) for the front-end and Node.js for the back-end. The website showcases my projects, skills, and experience in a clean, responsive, and user-friendly design, reflecting my expertise in full-stack development and commitment to creating efficient, scalable web applications."
+        ],
+        "link" : "https://salimsportfolio.netlify.app/"
+
     },
     {
         "id": 3,
@@ -21,6 +30,7 @@
         "type_design": true,
         "type_dev": false,
         "image": "/images/Play Time reserve.png",
-        "description": "Discover the elegance redefined with our latest design project! Our e-commerce website offers a seamless shopping experience, showcasing classic menswear. A sleek interface, captivating visuals, and a streamlined ordering process await you. Explore style with ease."
+        "description": ["I designed a comprehensive UI/UX for a stadium reservation app, focusing on enabling users to book football stadiums or join existing matches. The project included creating a full design system with a cohesive color palette, typography, and reusable UI components, as well as establishing a clear visual hierarchy and app architecture for intuitive navigation. The result is a user-friendly platform that simplifies the process of reserving stadiums or joining games, tailored for football enthusiasts."],
+        "link": "https://www.figma.com/design/maJ0NtTNrUGbjGPaoG4h3h/reservation-foot?t=HGOzC9payeZNDiO9-0"
     }
 ]
