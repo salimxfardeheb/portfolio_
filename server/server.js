@@ -80,7 +80,7 @@ app.get("/portfolio", (req, res) => {
     })
     .catch((error) => {
       res.status(500).json({ error: error.message });
-      console.error(error);
+      console.error("server error :" + error);
     });
 });
 
