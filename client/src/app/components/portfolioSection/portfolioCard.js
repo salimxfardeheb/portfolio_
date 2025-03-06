@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion as m } from "framer-motion";
 
-const portfolioCard = ({ Job , type}) => {
+const portfolioCard = ({ Job }) => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
-  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:7000";
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const getPortfolio = async () => {
