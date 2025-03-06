@@ -84,7 +84,7 @@ app.get("/portfolio", (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
 });
