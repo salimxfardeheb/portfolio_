@@ -4,7 +4,7 @@ import { motion as m } from "framer-motion";
 
 const portfolioCard = ({ Job }) => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
-  const apiUrl = 'https://portfolio-jade-five-28.vercel.app/';
+  const apiUrl = 'https://portfolio-jade-five-28.vercel.app';
 
   useEffect(() => {
     const getPortfolio = async () => {

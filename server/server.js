@@ -12,23 +12,14 @@ const app = express();
 
 dotenv.config({ path: "./.env" });
 
-const allowedOrigins = [process.env.CLIENT_URL];
+// const allowedOrigins = [process.env.CLIENT_URL];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Origine non autorisée par CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));;
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", process.env.CLIENT_URL);
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
