@@ -4,7 +4,7 @@ import { motion as m } from "framer-motion";
 
 const portfolioCard = ({ Job }) => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = 'http://localhost:7000';
 
   useEffect(() => {
     const getPortfolio = async () => {
