@@ -4,14 +4,12 @@ import { motion as m } from "framer-motion";
 
 const portfolioCard = ({ Job }) => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
-  const apiUrl = 'https://portfolio-jade-five-28.vercel.app';
+  const apiUrl = "https://portfolio-jade-five-28.vercel.app";
 
   useEffect(() => {
     const getPortfolio = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/portfolio`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(`${apiUrl}/portfolio`);
         console.log("data imported succesfully !");
         setItemsPortfolio(response.data);
       } catch (error) {
@@ -30,13 +28,15 @@ const portfolioCard = ({ Job }) => {
         <p className="text-white text-MobileHeader2 md:text-Header2">{Job}</p>
       </div>
       <div className="flex flex-wrap justify-around gap-y-20 w-full">
-        {itemsPortfolio.map((data) => ( data.type_dev && Job == "Full-Stack Developer" || data.type_design && Job == "UI & UX Designer"?
-          <div key={data.id} className="flex flex-col gap-4 md:gap-10">
-            <m.img src={data.image} alt={data.title} className="min-w-xl" />
-            <p className="text-white text-Header4">{data.title}</p>
-          </div> 
-          : null
-        ))}
+        {itemsPortfolio.map((data) =>
+          (data.type_dev && Job == "Full-Stack Developer") ||
+          (data.type_design && Job == "UI & UX Designer") ? (
+            <div key={data.id} className="flex flex-col gap-4 md:gap-10">
+              <m.img src={data.image} alt={data.title} className="min-w-xl" />
+              <p className="text-white text-Header4">{data.title}</p>
+            </div>
+          ) : null
+        )}
       </div>
     </div>
   );
