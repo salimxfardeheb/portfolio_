@@ -12,12 +12,12 @@ const app = express();
 
 dotenv.config({ path: "./.env" });
 
-const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:3000"];
+const allowedOrigins = [process.env.CLIENT_URL];
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Origine non autorisée par CORS"));
@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/")));
 app.use(body_parser.urlencoded({ extended: true }));
 
-app.post("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "hello" });
 });
 
