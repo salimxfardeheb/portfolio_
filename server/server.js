@@ -19,6 +19,16 @@ app.use(
     origin: process.env.CLIENT_URL,
   })
 );
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", process.env.CLIENT_URL);
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/")));
 app.use(body_parser.urlencoded({ extended: true }));
@@ -75,7 +85,6 @@ app.get("/portfolio", (req, res) => {
       console.error("server error :" + error);
     });
 });
-
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
