@@ -87,6 +87,8 @@ app.get("/portfolio", (req, res) => {
     });
 });
 
+app.get('/test-mode',(req,res)=> {res.json({message: "test success"})})
+
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
