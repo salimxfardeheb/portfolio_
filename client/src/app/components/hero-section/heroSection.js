@@ -36,11 +36,11 @@ const HeroSection = () => {
         </div>
               {/* CTA Button (see my works) */}
       <div className="mt-9">
-        <Link href="/portfolio">
+        <AnchorLink href="/portfolio">
           <button className="px-9 py-5 text-white text-MobileHeader4 border-2 hover:bg-redOrange hover:scale-105 duration-200">
             See My Works
           </button>
-        </Link>
+        </AnchorLink>
       </div>
       </div>
 
