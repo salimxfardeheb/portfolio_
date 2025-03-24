@@ -4,7 +4,7 @@ import { motion as m } from "framer-motion";
 
 const portfolioCard = ({ Job }) => {
   const [itemsPortfolio, setItemsPortfolio] = useState([]);
-  const apiUrl = "http://localhost:7000";
+  const apiUrl = "https://portfolio-l4ki.onrender.com";
 
   useEffect(() => {
     const getPortfolio = async () => {

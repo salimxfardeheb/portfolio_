@@ -25,7 +25,7 @@ const Footer = () => {
   };
 
   const values = { name, email, message };
-  const api_url = process.env.REACT_APP_API_URL || "http://localhost:7000"
+  const api_url = "https://portfolio-l4ki.onrender.com"
 
   const sendMail = () => {
     axios
