@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         {success && (
-          <p className="text-green-500 font-semibold">
+          <p className="text-green-500 font-semibold text-white">
             ✅ Votre message a été envoyé avec succès !
           </p>
         )}

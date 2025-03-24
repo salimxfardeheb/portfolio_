@@ -21,7 +21,7 @@ const Myworks = () => {
         </div>
         <div className="text-MobileHeader2 md:text-Header2 text-center text-redOrange flex flex-col justify-center items-center h-fit my-auto mx-auto gap-10 ">
           <div>
-            <Link href="/portfolio">
+            <Link href="/portfolio/graphicdesign">
               <button className="px-9 py-5 text-black hover:text-white text-MobileHeader4  border-2 hover:bg-redOrange hover:scale-105 duration-200">
                 See My Works
               </button>
@@ -37,7 +37,7 @@ const Myworks = () => {
         </div>
         <div className="text-MobileHeader2 md:text-Header2 text-center text-redOrange flex flex-col justify-center items-center h-fit my-auto mx-auto gap-10 ">
           <div>
-            <Link href="/portfolio">
+            <Link href="/portfolio/fullstack">
               <button className="px-9 py-5 text-black hover:text-white text-MobileHeader4  border-2 hover:bg-redOrange hover:scale-105 duration-200">
                 See My Works
               </button>
